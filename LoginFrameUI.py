@@ -19,7 +19,7 @@ class LoginFrame(wx.Frame):
     def InitUI(self):
         #设置界面所用字体
         f=wx.Font(20,wx.DECORATIVE,wx.NORMAL,wx.NORMAL)
-        f1=wx.Font(16,wx.DECORATIVE,wx.NORMAL,wx.NORMAL)
+        f1=wx.Font(10,wx.DECORATIVE,wx.NORMAL,wx.NORMAL)
         f2=wx.Font(15,wx.DECORATIVE,wx.NORMAL,wx.NORMAL)
 
         user=wx.StaticText(self,label="用户名",pos=(25,13),size=(80,35))
@@ -30,7 +30,7 @@ class LoginFrame(wx.Frame):
         self.tc1=wx.TextCtrl(self,pos=(140,10),size=(170,35))
         self.tc1.SetFont(f)
         self.tc2=wx.TextCtrl(self,pos=(140,65),size=(170,35),style=wx.TE_PASSWORD)
-        self.tc2.SetFont(f)
+        self.tc2.SetFont(f1)
 
         confirmButton=wx.Button(self,label="确认",pos=(80,110),size=(60,30))
         confirmButton.Bind(wx.EVT_BUTTON,self.innerConfirm)
