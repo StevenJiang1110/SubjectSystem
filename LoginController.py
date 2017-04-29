@@ -1,14 +1,8 @@
 import pymysql
+import DatabaseConfig
 
-config={
-    'host':'localhost',
-    'port':3306,
-    'user':'zx_root',
-    'password':'123456',
-    'db':'test',
-    'charset':'utf8mb4',
-    'cursorclass':pymysql.cursors.DictCursor,
-}
+config=DatabaseConfig.config
+
 #这个函数用来检查用户的登录信息，传入的变量为用户名和密码
 #该函数有五个返回值，分别为-2，-1,1,2,3
 #-2表示用户名不存在

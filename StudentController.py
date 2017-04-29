@@ -1,15 +1,8 @@
 import pymysql
+import DatabaseConfig
 
 #连接数据库的配置信息
-config={
-    'host':'localhost',
-    'port':3306,
-    'user':'zx_root',
-    'password':'123456',
-    'db':'test',
-    'charset':'utf8mb4',
-    'cursorclass':pymysql.cursors.DictCursor,
-}
+config=DatabaseConfig.config
 
 #一个学生的最大学分数
 MAX_POINT=10
