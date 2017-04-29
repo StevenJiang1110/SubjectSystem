@@ -22,26 +22,35 @@ class LoginFrame(wx.Frame):
         f1=wx.Font(10,wx.DECORATIVE,wx.NORMAL,wx.NORMAL)
         f2=wx.Font(15,wx.DECORATIVE,wx.NORMAL,wx.NORMAL)
 
-        user=wx.StaticText(self,label="用户名",pos=(25,13),size=(80,35))
+        self.panel1=wx.Panel(self,-1)
+
+        user=wx.StaticText(self.panel1,label="用户名",pos=(25,13),size=(80,35))
         user.SetFont(f)
-        password=wx.StaticText(self,label="密码",pos=(25,68),size=(80,35))
+        password=wx.StaticText(self.panel1,label="密码",pos=(25,68),size=(80,35))
         password.SetFont(f)
 
-        self.tc1=wx.TextCtrl(self,pos=(140,10),size=(170,35))
+        self.tc1=wx.TextCtrl(self.panel1,pos=(140,10),size=(170,35),style=wx.TE_PROCESS_ENTER)
         self.tc1.SetFont(f)
-        self.tc2=wx.TextCtrl(self,pos=(140,65),size=(170,35),style=wx.TE_PASSWORD)
-        self.tc2.SetFont(f1)
+        self.tc1.Bind(wx.EVT_TEXT_ENTER,self.keyDown)
 
-        confirmButton=wx.Button(self,label="确认",pos=(80,110),size=(60,30))
+        self.tc2=wx.TextCtrl(self.panel1,pos=(140,65),size=(170,35),style=wx.TE_PASSWORD|wx.TE_PROCESS_ENTER)
+        self.tc2.SetFont(f1)
+        self.tc2.Bind(wx.EVT_TEXT_ENTER,self.keyDown)
+
+        confirmButton=wx.Button(self.panel1,label="确认",pos=(80,110),size=(60,30))
         confirmButton.Bind(wx.EVT_BUTTON,self.innerConfirm)
         confirmButton.SetFont(f2)
 
-        closeButton=wx.Button(self,label="退出",pos=(210,110),size=(60,30))
+        closeButton=wx.Button(self.panel1,label="退出",pos=(210,110),size=(60,30))
         closeButton.Bind(wx.EVT_BUTTON,self.close)
         closeButton.SetFont(f2)
 
     def close(self,event):
         self.Close()
+
+    #按下回车之后的界面逻辑，与按下确认键实现相同的功能
+    def keyDown(self,event):
+        self.innerConfirm(event)
 
     #确认按键的逻辑
     def innerConfirm(self,event):
