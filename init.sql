@@ -99,19 +99,65 @@ INSERT INTO department VALUES
 INSERT INTO department VALUES
 ('108','Law','Feng');
 INSERT INTO department VALUES
-('109','Psychology','Chen');
+('109','Chinese','Chen');
 
 
 INSERT INTO teacher VALUES
-('10000','Zhao1','100','professor','123456','1-101','13456789101','Zhao1@fudan.edu.cn');
+('10000','骆玉明','100','professor','123456','1-101','13456789101','LYM@fudan.edu.cn');
 INSERT INTO teacher VALUES
-('10001','Qian1','106','lecturer','123456','2-103','13456789103','Qian1@fudan.edu.cn');
+('10001','段怀清','106','lecturer','123456','2-103','13456789103','DHQ@fudan.edu.cn');
+INSERT INTO teacher VALUES
+('10002','王东明','109','associate professor','123456','4-103','13452789103','DMW@fudan.edu.cn');
+INSERT INTO teacher VALUES
+('10003','李祥年','104','associate professor','123456','3-103','134568659103','LXN@fudan.edu.cn');
+INSERT INTO teacher VALUES
+('10004','戴燕','106','professor','123456','2-203','13456782903','DY@fudan.edu.cn');
+INSERT INTO teacher VALUES
+('10005','陆力强','101','associate professor','123456','7-103','13456789103','LLQ@fudan.edu.cn');
+INSERT INTO teacher VALUES
+('10006','王宇芳','101','lecturer','123456','9-103','13456569103','WYF@fudan.edu.cn');
+INSERT INTO teacher VALUES
+('10007','沈皓','106','professor','123456','8-103','13456569123','SH@fudan.edu.cn');
+INSERT INTO teacher VALUES
+('10008','何健','107','lecturer','123456','7-103','13456569876','HJ@fudan.edu.cn');
+INSERT INTO teacher VALUES
+('10009','王向荣','103','lecturer','123456','9-103','13909569103','WXR@fudan.edu.cn');
+INSERT INTO teacher VALUES
+('10010','杨晓光','108','professor','123456','10-103','13456569103','YXG@fudan.edu.cn');
+INSERT INTO teacher VALUES
+('10011','叶建楠','105','professor','123456','10-103','13456569103','YJN@fudan.edu.cn');
+
 
 
 INSERT INTO student VALUES
-('100000000','Zhao2','CS-1','M','G','2015','106','123456');
+('100000000','杨鑫','CS-1','M','G','2015','106','123456');
 INSERT INTO student VALUES
-('100000001','Qian2','HIS-2','F','S','2014','104','123456');
+('100000001','张彦斌','CS-2','F','S','2014','106','123456');
+INSERT INTO student VALUES
+('100000002','陈忠民','CS-1','M','G','2015','106','123456');
+INSERT INTO student VALUES
+('100000003','付杰','HIS-2','F','S','2014','104','123456');
+INSERT INTO student VALUES
+('100000004','田雪婷','NATH-1','M','G','2015','100','123456');
+INSERT INTO student VALUES
+('100000005','朱慧敏','PHYS-2','F','S','2014','101','123456');
+INSERT INTO student VALUES
+('100000006','张奇','PHYS-1','M','G','2015','101','123456');
+INSERT INTO student VALUES
+('100000007','张静','LAW-2','F','S','2014','108','123456');
+INSERT INTO student VALUES
+('100000008','吴新明','CHIN-1','M','G','2015','109','123456');
+INSERT INTO student VALUES
+('100000009','徐慧萍','LAW-2','F','S','2014','108','123456');
+INSERT INTO student VALUES
+('100000010','梁振国','CS-1','M','G','2015','106','123456');
+INSERT INTO student VALUES
+('100000011','姚轩','HIS-2','F','S','2014','104','123456');
+INSERT INTO student VALUES
+('100000012','陈超','CHEM-1','M','G','2015','102','123456');
+INSERT INTO student VALUES
+('100000013','任国栋','BIOL-2','F','S','2014','103','123456');
+
 
 
 INSERT INTO admin_info VALUES
@@ -119,9 +165,36 @@ INSERT INTO admin_info VALUES
 
 
 INSERT INTO course VALUES
-('1000000','Database',32,34,'2-209',3,80,4,'10001','106');
+('1000000','数据库引论',32,34,'2-209',3,10,4,'10001','106');
 INSERT INTO course VALUES
-('1000001','Data Structure',15,17,'2-207',4,40,3,'10001','106');
+('1000001','数据结构',15,17,'2-207',4,40,3,'10001','106');
+INSERT INTO course VALUES
+('1000002','中国当代小说选读',50,51,'3-303',2,20,1,'10002','109');
+INSERT INTO course VALUES
+('1000003','计算机原理',49,51,'2-303',4,20,2,'10004','106');
+INSERT INTO course VALUES
+('1000004','算法设计与分析',37,39,'1-303',4,10,3,'10004','106');
+INSERT INTO course VALUES
+('1000005','国际投资法',2,5,'6-303',4,10,4,'10010','108');
+INSERT INTO course VALUES
+('1000006','刑事政策',6,9,'3-301',5,5,5,'10010','108');
+INSERT INTO course VALUES
+('1000007','编译原理',60,63,'2-303',4,20,6,'10007','106');
+INSERT INTO course VALUES
+('1000008','复变函数',27,29,'2-303',4,20,7,'10000','100');
+INSERT INTO course VALUES
+('1000009','拓扑学',40,42,'2-303',4,20,8,'10000','100');
+INSERT INTO course VALUES
+('1000010','热力学与统计物理',27,29,'2-303',4,20,1,'10005','101');
+INSERT INTO course VALUES
+('1000011','固体物理',50,52,'2-303',4,20,2,'10006','101');
+INSERT INTO course VALUES
+('1000012','计量经济学',55,57,'1-303',4,5,3,'10008','107');
+INSERT INTO course VALUES
+('1000013','财政学',28,30,'2-303',4,5,4,'10008','107');
+INSERT INTO course VALUES
+('1000014','中国文学经典',29,31,'1-303',4,5,5,'10002','109');
+
 
 
 INSERT INTO selectcourse VALUES

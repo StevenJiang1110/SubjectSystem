@@ -5,13 +5,13 @@ import DatabaseConfig
 config=DatabaseConfig.config
 
 #一个学生的最大学分数
-MAX_POINT=10
+MAX_POINT=20
 
 #根据学号获得该学生修读的所有课程作为列表返回,信息包括课程号，课程名，课程时间和任课老师名，如果没有结果返回（）
 def GetCourse(sno):
     conn=pymysql.connect(**config)
     with conn.cursor() as cursor:
-        sql='SELECT selectcourse.cno,cname,begintime,endtime,tname FROM course,selectcourse,teacher WHERE selectcourse.sno=%s and selectcourse.cno=course.cno AND course.tno=teacher.tno'
+        sql='SELECT selectcourse.cno,cname,begintime,endtime,tname,point FROM course,selectcourse,teacher WHERE selectcourse.sno=%s and selectcourse.cno=course.cno AND course.tno=teacher.tno'
         cursor.execute(sql,sno)
         result=cursor.fetchall()
         conn.commit()

@@ -529,6 +529,10 @@ class StudentFrame(wx.Frame):
             label4 = wx.StaticText(self.panel3, label=u'课程时间', pos=(initX+450, initY), size=(150, 45),style=wx.ALIGN_CENTER)
             label4.SetFont(f)
             self.SelectedCourseLabel.append(label4)
+            # 标签5：
+            label5 = wx.StaticText(self.panel3, label=u'学分', pos=(initX + 600, initY), size=(100, 45),style=wx.ALIGN_CENTER)
+            label5.SetFont(f)
+            self.SelectedCourseLabel.append(label5)
 
             initY+=45
 
@@ -536,6 +540,7 @@ class StudentFrame(wx.Frame):
                 cno=dic['cno']
                 cname=dic['cname']
                 tname=dic['tname']
+                point=str(dic['point'])
                 begintime=int(dic['begintime'])
                 endtime=int(dic['endtime'])
                 ctime=StudentController.timeToString(begintime,endtime)
@@ -555,8 +560,12 @@ class StudentFrame(wx.Frame):
                 label4 = wx.StaticText(self.panel3, label=ctime, pos=(initX + 450, initY), size=(150, 45),style=wx.ALIGN_CENTER)
                 label4.SetFont(f)
                 self.SelectedCourseLabel.append(label4)
+                # 标签5：学分
+                label5 = wx.StaticText(self.panel3, label=point, pos=(initX + 600, initY), size=(100, 45),style=wx.ALIGN_CENTER)
+                label5.SetFont(f)
+                self.SelectedCourseLabel.append(label5)
                 #退课按钮
-                dropButton=wx.Button(self.panel3,label='退课',pos=(initX+650,initY),size=(120,35),style=wx.ALIGN_LEFT)
+                dropButton=wx.Button(self.panel3,label='退课',pos=(initX+700,initY),size=(120,35),style=wx.ALIGN_LEFT)
                 dropButton.SetFont(f)
                 dropButton.Bind(wx.EVT_BUTTON,lambda evt,ccno=cno:self.dropCourse(ccno))
                 self.SelectedCourseLabel.append(dropButton)
@@ -619,7 +628,7 @@ class StudentFrame(wx.Frame):
         #用来显示课程列表的scrollwindow
         self.scrollwindow2 = wx.ScrolledWindow(parent=self.panel2, pos=(0, 80), size=(920, 400))
         self.scrollwindow2.SetBackgroundColour('white')
-        self.scrollwindow2.SetScrollbar(1, 1, 600, 400)
+        self.scrollwindow2.SetScrollbar(0,20,0,20)
 
         self.scrollwindow1.Hide()
         self.scrollwindow2.Hide()
@@ -645,7 +654,7 @@ class StudentFrame(wx.Frame):
         #课表左上第一格
         f5 = wx.Font(18, wx.DECORATIVE, wx.NORMAL, wx.NORMAL)
         #课表主体
-        f6=wx.Font(10,wx.DECORATIVE,wx.NORMAL,wx.BOLD)
+        f6=wx.Font(12,wx.DECORATIVE,wx.NORMAL,wx.BOLD)
         #一周对应七天
         week=['星期一','星期二','星期三','星期四','星期五','星期六','星期日']
         timelabel=['第一节\n8:00-8:45',
